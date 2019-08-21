@@ -1,9 +1,10 @@
 name: DeltaEssentials
 main: com.gmail.tracebachi.DeltaEssentials.Spigot.DeltaEssentialsPlugin
-version: ${project.version}
+version: 3.0.0-Lava
 author: GeeItsZee (tracebachi@gmail.com)
 depend: [SockExchange]
 softdepend: [Vault, PermissionsEx]
+api-version: '1.13'
 commands:
   reply:
     aliases: [r]

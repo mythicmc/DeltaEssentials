@@ -134,7 +134,6 @@ public class SameServerTeleporter
         switch (block.getType())
         {
           case LAVA:
-          case STATIONARY_LAVA:
           case FIRE:
             return null;
           default:

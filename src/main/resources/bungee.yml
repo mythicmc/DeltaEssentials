@@ -1,5 +1,5 @@
 name: ${project.artifactId}
 main: com.gmail.tracebachi.DeltaEssentials.Bungee.DeltaEssentialsPlugin
-version: ${project.version}
+version: 3.0.0-Lava
 author: GeeItsZee (tracebachi@gmail.com)
 depends: [SockExchange]
