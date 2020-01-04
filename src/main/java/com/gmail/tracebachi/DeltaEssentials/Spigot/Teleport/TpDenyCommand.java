@@ -38,10 +38,11 @@ public class TpDenyCommand implements CommandExecutor, Registerable
 
   private final DeltaEssentialsPlugin plugin;
   private final TpHereManager tpHereManager;
+  private final TpAskManager tpAskManager;
   private final MessageFormatMap formatMap;
 
   public TpDenyCommand(
-    DeltaEssentialsPlugin plugin, TpHereManager tpHereManager, MessageFormatMap formatMap)
+    DeltaEssentialsPlugin plugin, TpHereManager tpHereManager, TpAskManager tpAskManager, MessageFormatMap formatMap)
   {
     Preconditions.checkNotNull(plugin, "plugin");
     Preconditions.checkNotNull(tpHereManager, "tpHereManager");
@@ -49,6 +50,7 @@ public class TpDenyCommand implements CommandExecutor, Registerable
 
     this.plugin = plugin;
     this.tpHereManager = tpHereManager;
+    this.tpAskManager = tpAskManager;
     this.formatMap = formatMap;
   }
 
@@ -87,7 +89,10 @@ public class TpDenyCommand implements CommandExecutor, Registerable
       return true;
     }
 
-    tpHereManager.denyTpAskHere((Player) sender);
+    // TODO verify return boolean of TpAskManager#denyTpAsk
+    if (!tpAskManager.denyTpAsk((Player) sender)) {
+        tpHereManager.denyTpAskHere((Player) sender);
+    }
     return true;
   }
 }

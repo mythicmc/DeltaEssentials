@@ -52,7 +52,9 @@ Formats:
   TpAskHere/Sent: '&8[&a!&8] &aSuccess &8[&a!&8]&7 Sent TpAskHere request to &f{0}&7.'
   TpAskHere/Received: '&8[&9!&8] &9Info &8[&9!&8]&7 Received TpAskHere request from &f{0}&7.'
   TpAskHere/Denied: '&8[&9!&8] &9Info &8[&9!&8]&7 &f{0}&7 denied the TpAskHere request from &f{1}&7.'
-  TpAskHere/NoRequests: '&8[&c!&8] &cFailure &8[&c!&8]&7 You do not have any TpAskHere requests.'
+  TpAskHere/NoRequests: '&8[&c!&8] &cFailure &8[&c!&8]&7 You do not have any teleport requests.'
+  TpAsk/Sent: "&8[&a!&8] &aSuccess &8[&a!&8]&7 Sent TpAsk request to &f{0}&7."
+  TpAsk/Received: '&8[&9!&8] &9Info &8[&9!&8]&7 Received TpAsk request from &f{0}&7.'
 
   Tell/Log: '[{0} -> {1}] {2}'
   Tell/Sender: '&8[&dPM&8]&7=&8[&e{0} -> {1}&8] &d{2}'

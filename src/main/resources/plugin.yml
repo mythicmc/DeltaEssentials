@@ -1,7 +1,8 @@
 name: DeltaEssentials
 main: com.gmail.tracebachi.DeltaEssentials.Spigot.DeltaEssentialsPlugin
-version: 3.0.0-Lava
+version: 3.1.0
 author: GeeItsZee (tracebachi@gmail.com)
+authors: [GeeItsZee (tracebachi@gmail.com), HotLava03 (tierriff@hotmail.com)]
 depend: [SockExchange]
 softdepend: [Vault, PermissionsEx]
 api-version: '1.13'
@@ -21,6 +22,8 @@ commands:
   tpahere:
     aliases: []
   tp:
+    aliases: []
+  tpa:
     aliases: []
   tpdeny:
     aliases: []

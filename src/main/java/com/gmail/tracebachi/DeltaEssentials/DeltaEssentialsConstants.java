@@ -30,6 +30,7 @@ public class DeltaEssentialsConstants
     public static final String SOCIAL_SPY = "SocialSpy";
     public static final String TP_TO = "TpTo";
     public static final String TP_HERE = "TpHere";
+    public static final String TP_ASK = "TpAsk";
     public static final String TP_AFTER_LOAD = "TpAfterLoad";
     public static final String FIND_PLAYER = "FindPlayer";
   }
@@ -55,6 +56,8 @@ public class DeltaEssentialsConstants
     public static final String TP_ASK_HERE_RECEIVED = "TpAskHere/Received";
     public static final String TP_ASK_HERE_DENIED = "TpAskHere/Denied";
     public static final String TP_ASK_HERE_NO_REQUESTS = "TpAskHere/NoRequests";
+    public static final String TP_ASK_SENT = "TpAsk/Sent";
+    public static final String TP_ASK_RECEIVED = "TpAsk/Received";
 
     public static final String TELL_LOG = "Tell/Log";
     public static final String TELL_SENDER = "Tell/Sender";

@@ -70,6 +70,7 @@ public class DeltaEssentialsPlugin extends JavaPlugin
   private TpAfterLoadListener tpAfterLoadListener;
   private TpHereManager tpHereManager;
   private TpToManager tpToManager;
+  private TpAskManager tpAskManager;
   private PlayerFileInventoryCloseListener inventoryCloseListener;
 
   private ReplyCommand replyCommand;
@@ -85,6 +86,7 @@ public class DeltaEssentialsPlugin extends JavaPlugin
   private DisposalCommand disposalCommand;
   private DVanishCommand dVanishCommand;
   private FindPlayerCommand findPlayerCommand;
+  private TpAskCommand tpAskCommand;
 
   @Override
   public void onLoad()
@@ -156,6 +158,9 @@ public class DeltaEssentialsPlugin extends JavaPlugin
     tpToManager = new TpToManager(this, tpAfterLoadListener, sameServerTeleporter, messageFormatMap, api);
     tpToManager.register();
 
+    tpAskManager = new TpAskManager(this, sameServerTeleporter, messageFormatMap, api);
+    tpAskManager.register();
+
     inventoryCloseListener = new PlayerFileInventoryCloseListener(this);
     inventoryCloseListener.register();
 
@@ -175,7 +180,7 @@ public class DeltaEssentialsPlugin extends JavaPlugin
     blockTpCommand = new BlockTpCommand(this, messageFormatMap);
     blockTpCommand.register();
 
-    tpAcceptCommand = new TpAcceptCommand(this, tpHereManager, messageFormatMap);
+    tpAcceptCommand = new TpAcceptCommand(this, tpHereManager, tpAskManager, messageFormatMap);
     tpAcceptCommand.register();
 
     tpAskHereCommand = new TpAskHereCommand(this, tpHereManager, messageFormatMap, api);
@@ -184,11 +189,14 @@ public class DeltaEssentialsPlugin extends JavaPlugin
     tpCommand = new TpCommand(this, tpToManager, messageFormatMap, api);
     tpCommand.register();
 
-    tpDenyCommand = new TpDenyCommand(this, tpHereManager, messageFormatMap);
+    tpDenyCommand = new TpDenyCommand(this, tpHereManager, tpAskManager, messageFormatMap);
     tpDenyCommand.register();
 
     tpHereCommand = new TpHereCommand(this, tpHereManager, messageFormatMap, api);
     tpHereCommand.register();
+
+    tpAskCommand = new TpAskCommand(this, tpAskManager, messageFormatMap, api);
+    tpAskCommand.register();
 
     disposalCommand = new DisposalCommand(this, messageFormatMap);
     disposalCommand.register();

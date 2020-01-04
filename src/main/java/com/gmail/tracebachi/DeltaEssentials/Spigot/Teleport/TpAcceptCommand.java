@@ -38,10 +38,11 @@ public class TpAcceptCommand implements CommandExecutor, Registerable
 
   private final DeltaEssentialsPlugin plugin;
   private final TpHereManager tpHereManager;
+  private final TpAskManager tpAskManager;
   private final MessageFormatMap formatMap;
 
   public TpAcceptCommand(
-    DeltaEssentialsPlugin plugin, TpHereManager tpHereManager, MessageFormatMap formatMap)
+    DeltaEssentialsPlugin plugin, TpHereManager tpHereManager, TpAskManager tpAskManager, MessageFormatMap formatMap)
   {
     Preconditions.checkNotNull(plugin, "plugin");
     Preconditions.checkNotNull(tpHereManager, "tpHereManager");
@@ -49,6 +50,7 @@ public class TpAcceptCommand implements CommandExecutor, Registerable
 
     this.plugin = plugin;
     this.tpHereManager = tpHereManager;
+    this.tpAskManager = tpAskManager;
     this.formatMap = formatMap;
   }
 
@@ -87,7 +89,10 @@ public class TpAcceptCommand implements CommandExecutor, Registerable
       return true;
     }
 
-    tpHereManager.acceptTpAskHere((Player) sender);
+    // TODO verify return boolean of TpAskManager#acceptTpAsk
+    if (!tpAskManager.acceptTpAsk((Player) sender)) {
+        tpHereManager.acceptTpAskHere((Player) sender);
+    }
     return true;
   }
 }

@@ -117,7 +117,8 @@ public class PlayerTpEvent extends Event
     TP_TO,
     TP_OTHER_TO_OTHER,
     TP_HERE,
-    TP_ASK_HERE;
+    TP_ASK_HERE,
+    TP_ASK;
 
     public static TeleportType fromOrdinal(int ordinal)
     {
@@ -131,6 +132,8 @@ public class PlayerTpEvent extends Event
           return TP_HERE;
         case 3:
           return TP_ASK_HERE;
+        case 4:
+          return TP_ASK;
         default:
           throw new IllegalArgumentException("Unknown mapping for ordinal");
       }
